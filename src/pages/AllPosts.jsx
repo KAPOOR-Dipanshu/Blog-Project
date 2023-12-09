@@ -9,7 +9,7 @@ function AllPosts() {
 
     service.getPosts([]).then((posts) => {
         if(posts){
-            setPosts(posts)
+            setPosts(posts.documents)
         }
     })
   return (
