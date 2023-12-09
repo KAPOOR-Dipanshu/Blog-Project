@@ -11,16 +11,16 @@ function Home() {
                 setPosts(posts.documents)
             }
         })
-    })
+    }, [])
 
-    if(posts.length() === 0){
+    if(posts.length === 0){
         return (
             <div className='w-full py-8 mt-4 text-center'>
                 <Container>
                     <div className='flex flex-wrap'>
                         <div className='p-2 w-full'>
                             <h1 className='text-2xl font-bold hover:text-blue-500'> 
-                                Nothing to show 😅 
+                                Login to show 😅 
                             </h1>
                         </div>
                     </div>

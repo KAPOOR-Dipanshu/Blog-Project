@@ -8,19 +8,15 @@ export default function Protected({children , authentication = true}) {
     const [loading , setLoading] = useState(true)
     const authStatus = useSelector(state => state.auth.status)
 
-    //TODO: make it more optimized
     useEffect(() => {
-        if(authStatus === true){
-            navigate('/');
-        }
-        else if(authStatus === false){
-            navigate('/login');
-        }
-        setLoading(false);
-    }, [authStatus , navigate , authentication])
+      if(authentication && authStatus !== authentication){
+          navigate("/login")
+      } else if(!authentication && authStatus !== authentication){
+          navigate("/")
+      }
+      setLoading(false)
+  }, [authStatus, navigate, authentication])
 
-  return (
-    <div>AuthLayout</div>
-  )
+    return loading ? <h1>Loading...</h1> : <>{children}</>
 }
 
