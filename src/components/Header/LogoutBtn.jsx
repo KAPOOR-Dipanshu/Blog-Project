@@ -14,7 +14,7 @@ function LogoutBtn() {
     }
   return (
     <Button
-    className={'inline-block px-6 py-2 bg-white rounded-full'}
+    className={'inline-block px-4 py-3 mt-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-full text-white shadow-lg shadow-indigo-500/50'}
     onClick={logoutHandler}
     ><b>Logout</b></Button>
   )
